@@ -1,0 +1,1 @@
+var app =angular.module('myapp',['pagination']);////定义品优购模块
