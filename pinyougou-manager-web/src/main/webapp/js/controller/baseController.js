@@ -1,5 +1,4 @@
 app.controller('baseController',function($scope){
-
     //分页插件
     $scope.paginationConf = {
         currentPage: 1,<!--当前页-->
@@ -27,4 +26,18 @@ app.controller('baseController',function($scope){
         }
     };
 
+    $scope.jsonToString=function(jsonString,key){
+
+        var json= JSON.parse(jsonString);
+        var value="";
+
+        for(var i=0;i<json.length;i++){
+            if(i>0){
+                value+=",";
+            }
+            value +=json[i][key];
+        }
+
+        return value;
+    }
 });

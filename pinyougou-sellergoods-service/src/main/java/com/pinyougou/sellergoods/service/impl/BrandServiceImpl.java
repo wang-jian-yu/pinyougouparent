@@ -1,5 +1,6 @@
 package com.pinyougou.sellergoods.service.impl;
 import java.util.List;
+import java.util.Map;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -72,6 +73,11 @@ public class BrandServiceImpl implements BrandService {
         for(Long id:ids){
             brandMapper.deleteByPrimaryKey(id);
         }
+    }
+
+    @Override
+    public List<Map> selectOptionList() {
+        return brandMapper.selectOptionList();
     }
 
 }

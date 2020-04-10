@@ -25,6 +25,7 @@ app.controller('brandController',function ($scope,$controller,$http,brandService
         if($scope.entity.id!=null){
             object=brandService.update($scope.entity);
         }else{
+            console.log($scope.entity)
             object=brandService.add($scope.entity);
         }
         object.success(
