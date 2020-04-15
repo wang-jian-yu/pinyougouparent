@@ -54,12 +54,11 @@ app.controller('typeTemplateController' ,function($scope,$controller   ,typeTemp
 			$scope.reloadList();//重新加载
 		}else{
 			var entityOne = $scope.entity;
-			console.log(entityOne);
 			var entityArr = [];
 			entityArr.push(entityOne);
-			console.log(entityArr);
+			//console.log(entityArr);
 			var entityJson =JSON.stringify(entityArr);
-			console.log(entityJson);
+			//console.log(entityJson);
 			$.ajax({//请求登录页处理
 				url: "../typeTemplate/add.do",
 				dataType: "json",

@@ -57,5 +57,7 @@ public interface ItemCatService {
 	 * @return
 	 */
 	public PageResult findPage(TbItemCat itemCat, int pageNum, int pageSize);
+
+	List<TbItemCat> finParentById(Long id);//查询商品分类列表
 	
 }

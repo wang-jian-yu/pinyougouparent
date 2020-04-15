@@ -28,5 +28,10 @@ app.service('itemCatService',function($http){
 	//搜索
 	this.search=function(page,rows,searchEntity){
 		return $http.post('../itemCat/search.do?page='+page+"&rows="+rows, searchEntity);
-	}    	
+	}
+
+	//根据上级分类查询商品
+	this.finParentById=function(id){
+		return $http.get('../itemCat/finParentById.do?id='+id);
+	}
 });

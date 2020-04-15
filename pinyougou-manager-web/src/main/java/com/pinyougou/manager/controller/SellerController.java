@@ -3,6 +3,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.pinyougou.pojo.TbSeller;
@@ -101,7 +102,7 @@ public class SellerController {
 	
 		/**
 	 * 查询+分页
-	 * @param brand
+	 * @param seller
 	 * @param page
 	 * @param rows
 	 * @return
@@ -110,5 +111,15 @@ public class SellerController {
 	public PageResult search(@RequestBody TbSeller seller, int page, int rows  ){
 		return sellerService.findPage(seller, page, rows);		
 	}
-	
+	@RequestMapping("/updateStaus")
+	public Result updateStaus(String sellerId, String status){
+		try {
+			sellerService.updateStaus(sellerId,status);
+			return new Result(true, "成功");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new Result(false, "失败");
+		}
+	}
+
 }
